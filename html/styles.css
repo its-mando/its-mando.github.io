@@ -12,20 +12,13 @@ h2 {
 	text-align: center;
 	font-size: 35px;
 }
-.parent{
-  margin: 1rem;
-  padding: 2rem 2rem;
-  text-align: center;
-}
-.child {
-  display: inline-block;
+.myDiv {
   border-radius: 25px;
   background-color: #CA9968;
   border: 8px solid;
   padding: 15px;
   width: 300px;
   height: 300px;
-  vertical-align: middle;
   text-align: center;
 }
 img {
