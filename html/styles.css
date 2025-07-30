@@ -1,28 +1,67 @@
 body {
-	background-color: #CEBE8A;
-	font-family: verdana;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffe6f0;
 }
-h1 {
-	background-color: #CA9968;
-	text-align: center;
-	font-size: 50px;
+
+.heart-container {
+  position: relative;
 }
-h2 {
-	background-color: #CA9968; 
-	text-align: center;
-	font-size: 35px;
+
+.heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: pulse 1.5s infinite;
 }
-.myDiv {
-  border-radius: 25px;
-  background-color: #CA9968;
-  border: 8px solid #8B0000;
-  padding: 15px;
-  width: 300px;
-  height: 300px;
-  text-align: center;
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: red;
+  border-radius: 50%;
 }
-img {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50px;
+}
+
+.message {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  color: white;
+  font-family: cursive;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
